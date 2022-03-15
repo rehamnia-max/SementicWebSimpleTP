@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#"
+     xml:base="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#affiliated -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#affiliated">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Doctor"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#affiliated"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Service"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#hasAdress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#hasAdress">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#TOWN"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Malade"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#hasService -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#hasService">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hopital"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#hasdoctor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#hasdoctor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Malade"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Doctor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#isadmitted -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#isadmitted">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Malade"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hopital"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#name -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#worked -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#worked">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Doctor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hopital"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#birth_date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#birth_date">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#employee_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#employee_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Doctor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#joined_on -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#joined_on"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#label -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#label">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hopital"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#TOWN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CARDIOLOGY -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CARDIOLOGY">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CHU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CHU">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hopital"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Doctor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Doctor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#ENDORINOLOGY -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#ENDORINOLOGY">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CARDIOLOGY"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hopital -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hopital">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Malade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Malade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Pediatry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Pediatry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Radiology -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Radiology">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Service"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#TOWN -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#TOWN"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Annaba -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Annaba">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#TOWN"/>
+        <name xml:lang="en">Annaba</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#BELCOURT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#BELCOURT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hopital"/>
+        <hasService rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#ENDO"/>
+        <hasService rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Pediatry"/>
+        <label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BELCOURT</label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CARDIOLOGY -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CARDIOLOGY">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CARDIOLOGY"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#ENDO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#ENDO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#ENDORINOLOGY"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hakim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hakim">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Doctor"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hatem"/>
+        <worked rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#MUSTAPHA_BACHA"/>
+        <employee_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</employee_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hatem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hatem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Doctor"/>
+        <affiliated rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Radio"/>
+        <worked rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#MUSTAPHA_BACHA"/>
+        <employee_id rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</employee_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#MOHAMED -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#MOHAMED">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Malade"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Mohcen"/>
+        <hasAdress rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Annaba"/>
+        <hasdoctor rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hakim"/>
+        <birth_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2000-03-03T11:22:00</birth_date>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#MUSTAPHA_BACHA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#MUSTAPHA_BACHA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CHU"/>
+        <hasService rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#CARDIOLOGY"/>
+        <hasService rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Radio"/>
+        <label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MUSTAPHA BACHA</label>
+        <rdfs:comment xml:lang="en">Big Hospital in Algeria.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Mohcen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Mohcen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Malade"/>
+        <hasAdress rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Setif"/>
+        <hasdoctor rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Hakim"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Pediatry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Pediatry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Pediatry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Radio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Radio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Radiology"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Setif -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#Setif">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rehamnia8/ontologies/2022/2/clinic#TOWN"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

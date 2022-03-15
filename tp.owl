@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY tp "http://rehamnia/tp.owl#">
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#">
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+	<!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#">
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+]>
+<rdf:RDF xml:base="http://rehamnia/tp.owl" xmlns="http://rehamnia/tp.owl#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:tp="http://rehamnia/tp.owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+	<owl:Ontology rdf:about=""/>
+	<owl:ObjectProperty rdf:about="#copie_en">
+		<rdfs:range rdf:resource="#exemplaire"/>
+		<rdfs:domain rdf:resource="#film"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:about="#joue_dans">
+		<rdfs:domain rdf:resource="#acteur"/>
+		<rdfs:range rdf:resource="#film"/>
+	</owl:ObjectProperty>
+
+	<owl:DatatypeProperty rdf:about="#age">
+		<rdfs:domain rdf:resource="#personne"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="#nom">
+		<rdfs:domain rdf:resource="#personne"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="#num_exemp">
+		<rdfs:domain rdf:resource="#exemplaire"/>
+		<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="#prenom">
+		<rdfs:domain rdf:resource="#personne"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="#titre">
+		<rdfs:domain rdf:resource="#film"/>
+		<rdfs:range rdf:resource="&xsd;string"/>
+	</owl:DatatypeProperty>
+
+	<owl:Class rdf:about="#acteur">
+		<rdfs:subClassOf rdf:resource="#personne"/>
+<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#joue_dans"/>
+				<owl:minCardinality rdf:datatype="&xsd;int">1</owl:minCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:about="#exemplaire">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#copie_en"/>
+				<owl:Cardinality rdf:datatype="&xsd;int">1</owl:Cardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:about="#film">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#joue_dans"/>
+				<owl:minCardinality rdf:datatype="&xsd;int">1</owl:minCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="#copie_en"/>
+				<owl:minCardinality rdf:datatype="&xsd;int">1</owl:minCardinality>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<owl:Class rdf:about="#personne"/>
+
+	<owl:Class rdf:about="&owl;Thing"/>
+
+
+	<personne rdf:about="#amel">
+		<rdf:type rdf:resource="#acteur"/>
+		<age rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">20</age>
+		<nom>beldjoudi</nom>
+		<prenom>amel</prenom>
+		<joue_dans rdf:resource="#la_vie_et_la_joie"/>
+	</personne>
+
+	<film rdf:about="#la_vie_et_la_joie">
+		<rdf:type rdf:resource="&owl;Thing"/>
+		<titre>la vie et l&#39;espoir</titre>
+		<copie_en rdf:resource="#num2"/>
+	</film>
+
+	<owl:Thing rdf:about="#les_amies">
+		<rdf:type rdf:resource="#film"/>
+		<titre>les_amies</titre>
+		<copie_en rdf:resource="#num2"/>
+	</owl:Thing>
+
+	<film rdf:about="#la_famille">
+		<rdf:type rdf:resource="&owl;Thing"/>
+		<titre>la_famille </titre>
+		<copie_en rdf:resource=""/>
+	</film>
+		<film rdf:about="#Matrix">
+		<rdf:type rdf:resource="&owl;Thing"/>
+		<titre>la_famille </titre>
+		<copie_en rdf:resource=""/>
+	</film>
+
+	<rdf:Description rdf:about="#fouad">
+		<rdf:type rdf:resource="#acteur"/>
+		<rdf:type rdf:resource="#personne"/>
+		<age rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">35</age>
+		<nom>seridi</nom>
+		<prenom>fouad</prenom>
+		<joue_dans rdf:resource="#la_vie_et_la_joie"/>
+		<joue_dans rdf:resource="#les_amies"/>
+	</rdf:Description>
+	
+	<rdf:Description rdf:about="#leila">
+		<rdf:type rdf:resource="#acteur"/>
+		<rdf:type rdf:resource="#personne"/>
+		<age rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">40</age>
+		<nom>bouaziz</nom>
+		<prenom>leila</prenom>
+		<joue_dans rdf:resource="#les_amies"/>
+	</rdf:Description>
+
+	<owl:Thing rdf:about="#num1">
+		<rdf:type rdf:resource="#exemplaire"/>
+		<num_exemp rdf:datatype="&xsd;positiveInteger">1</num_exemp>
+	</owl:Thing>
+
+	<exemplaire rdf:about="#num2">
+		<rdf:type rdf:resource="&owl;Thing"/>
+		<num_exemp rdf:datatype="&xsd;positiveInteger">2</num_exemp>
+	</exemplaire>
+	
+	<personne rdf:about="#salim">
+		<age rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">60</age>
+		<prenom>salim</prenom>
+		<nom>khelifa</nom>
+	</personne>
+
+	<rdf:Description>
+		<rdf:type rdf:resource="&owl;AllDifferent"/>
+		<owl:distinctMembers rdf:parseType="Collection">
+			<rdf:Description rdf:about="#salim"/>
+			<rdf:Description rdf:about="#fouad"/>
+		</owl:distinctMembers>
+	</rdf:Description>
+
+	<rdf:Description>
+		<rdf:type rdf:resource="&owl;AllDifferent"/>
+		<owl:distinctMembers rdf:parseType="Collection">
+			<rdf:Description rdf:about="#les_amies"/>
+			<rdf:Description rdf:about="#la_vie_et_la_joie"/>
+		</owl:distinctMembers>
+	</rdf:Description>
+
+</rdf:RDF>
